@@ -48,7 +48,14 @@ int main(){
       numb.pop();
       numb1=numb.top();
       numb.pop();
-      numb.push(numb1/numb2);
+      try{
+        if(numb2==0) throw "Cannot be divided by zero!";
+        numb.push(numb1/numb2);
+      }
+      catch(const char* error){
+        cout << error << '\n';
+        return 0;
+      }
       // cout << "/" << '\n';
       break;
     }
